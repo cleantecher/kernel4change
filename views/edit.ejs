@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>edit form for <%= eachdbEntry.name%></p>
+    <form action="/dbContents/<%=eachdbEntry._id%>?_method=PUT" method="POST">
+        <label for="name">Hello</label>
+        <input type="text" name="name" placeholder="putsomethinghere" value="<%=eachdbEntry.name%>">
+        <label for="message">Whats changed?</label>
+        <input type="text" name="message" placeholder="message"value="<%=eachdbEntry.message%>">
+        <button>Submit</button>
+    </form>
+</body>
+</html>

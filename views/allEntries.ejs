@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>see all db enties</title>
+</head>
+<body>
+    <h1>All Entries in the Database</h1>
+    <ul>
+        <%for(let entry of allEntries){%>
+        <li><a href="/dbContents/<%=entry._id%>"><%= entry.name%></a></li>
+        <%}%>   
+    </ul>
+
+</body>
+</html>

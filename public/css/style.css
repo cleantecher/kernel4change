@@ -1,0 +1,86 @@
+:root {
+    --blue: #01B5D9;
+    --pink: #FF0D91;
+    --purple:#6D0C8D;
+    --red: #FF312E;
+    --yellow:#FFDE2B;
+    --green:#00D78B;
+    --lgrey: #9FA1A4;
+    --dgrey:#4A4B4C;
+
+    /* syntax to use the colors */
+    /* var(--color); */
+    }
+/* syntax easily confused */
+/* #id */
+/* .class */
+
+body{
+    background-color: white;
+}
+
+.navbar {
+    background-color: var(--dgrey);
+}
+#visualWrapper{
+    margin-right: 2vh;
+    margin-left: 2vh;
+}
+.lightCase{
+    background-color: var(--blue);
+    height: 10vh;
+    border-radius:2.5vh;
+    align-items: center;
+    justify-content: center;
+}
+
+.light{
+    border-color: white;
+    height: 8vh;
+    width: 8vh;
+    border-radius: 4vh;
+    border-style: solid; 
+}
+#red{
+    background-color: var(--red);
+}
+#yellow{
+    background-color: var(--yellow);
+}
+#green{
+    background-color: var(--green);
+}
+#purple{
+    background-color: var(--purple);
+}
+
+.feedback{
+    height: auto;
+    border-radius: 2.5vh;
+    position: relative;
+    align-items: center;
+    align-content: center;
+}
+
+.feedbackCategory{
+    width: 98%;
+    height: 10%;
+    margin-top:1vh;
+    margin-bottom: 1vh;
+    margin-left: 1%;
+    border-radius: 2vh;
+}
+
+.final{
+    color: aliceblue;
+    align-content: center;
+    align-items: center;
+    height: auto;
+    border-radius: 2.5vh;
+    position: relative;
+    align-items: center;
+    align-content: center;
+    text-align: center;
+}
+
+

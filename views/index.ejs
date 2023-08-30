@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- css file is below the bootstrap, style.css formatting will override the bootstrap
+    
+    -->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+    <title>index.html</title>
+</head>
+<body>
+<!-- navbar from bootstrap -->
+    <nav class="navbar navbar-expand-md navbar-dark">
+        <div class="container-fluid">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class=" nav-link active" aria-current="page" href="#">Aman</a>
+              <a class=" nav-link" href="#">Hates</a>
+              <a class=" nav-link" href="#">Coding</a>
+              <a class=" nav-link disabled">Bros</a>
+            </div>
+          </div>
+        </div>
+    </nav>
+  <!--navbar code ended  -->
+  <!-- js trial -->
+  <!-- <button id="myButton" onclick="clickBtn()">Click me!</button>
+  <p id="btn"></p> -->
+  <!-- js trial -->
+    <div id="visualWrapper">
+        <div id="maincontent">
+            <div class="row">
+                <div class="col-sm mt-4">
+                    
+                    <div class="lightCase d-flex align-items-center justify-content-md-center">
+                        <!-- create a variable from the data in the database and feed it here -->
+                        <div class="light" id="red" value="occurance"></div>
+                        <!-- create a variable from the data in the database and feed it here -->
+                    </div>
+                    <div class="feedback mt-2" id="red">
+                            <%for(let entry of allEntries){%>
+                                <% if (entry.category == "red" && entry.show=="yes") { %>
+                                            <button class="feedbackCategory"  onclick="clickBtn(`<%= entry._id %>`, 'red')"><%=entry.description %><span id="<%= entry._id %>">0</span></button>
+                                    <%}%>
+                             <%}%>   
+                    </div>
+                </div>
+                <div class="col-sm mt-4">
+                    <div class="lightCase d-flex align-items-center justify-content-md-center">
+                        <div class="light" id="yellow"></div>
+                    </div>
+                    <div class="feedback mt-2" id="yellow">
+                        <!-- the feedback code will go here -->
+                        <%for(let entry of allEntries){%>
+                            <% if (entry.category == "yellow" && entry.show=="yes") { %>
+                                    <button class="feedbackCategory" id="<%=entry._id%>"><%=entry.description %> </button>
+                                <%}%>
+                         <%}%>  
+                    </div>
+                </div>
+                <div class="col-sm mt-4">
+                    <div class="lightCase d-flex align-items-center justify-content-md-center">
+                        <div class="light" id="green"></div>
+                    </div>
+                    <div class="feedback mt-2" id="green">
+                        <!-- the feedback code will go here -->
+                        <%for(let entry of allEntries){%>
+                            <% if (entry.category == "green") { %>
+                                    <button class="feedbackCategory" id="<%=entry._id%>"><%=entry.description %> </button>
+                                <%}%>
+                         <%}%>  
+                    </div>
+                </div>
+                <div class="col-sm mt-4">
+                    <div class="lightCase d-flex align-items-center justify-content-md-center">
+                        <div class="light" id="purple"></div>
+                    </div>
+                    <div class="feedback mt-2" id="purple">
+                        <!-- the feedback code will go here -->
+                        <div class="final row">
+                            <form action="/track" method="POST">
+                                <input type="hidden" name="entry" id="entry" value="">
+                                <label for="class">Enter Class in XXABCXX format please</label><br>
+                                <input type="text" name="classId" placeholder="class"><br>
+                                <label for="overall">Recommendation</label><br>
+                                    <select name="recommendation" >
+                                        <option value="great">Elective-Good experience </option>
+                                        <option value="drop">Drop</option>
+                                        <option value="gRequired">Required Credit-Good experience</option>
+                                        <option value="bRequired">Required Credit-Bad experience</option>
+                                    </select>
+                                    <br>
+                                <button class="feedbackCategory">Final Submit</button>
+                            </form>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- scripts -->
+<!-- bootstrap -->
+<!-- scripts -->
+<script type="text/javascript" src="./js/function.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin</title>
+</head>
+<body>
+    <form action="/admin" method="POST">
+        <label for="category">Category</label>
+        <select name="category" id="">
+            <option value="red">Red</option>
+            <option value="yellow">Yellow</option>
+            <option value="green">Green</option>
+        </select>
+        <label for="show">show</label>
+        <select name="show" id="">
+            <option value="yes">yes</option>
+            <option value="no">no</option>
+        </select>
+        <input type="text" name="description" placeholder="define">
+        <label for="description">Track Event</label>
+        <input type="number" name="occurance" placeholder="0">
+        <button>Submit</button>
+    </form>
+</body>
+</html>
