@@ -155,9 +155,15 @@ app.get("/", async(req,res)=>{
 })
 
 app.post("/track", async (req,res)=>{
-    const { entry, classId, recommendation, details, email, university} = req.body
+    console.log(req.body)
+    const { entry, classId, recommendation, details, email, university, detailsRed, detailsYellow, detailsGreen} = req.body
     const allEntries= await structureCategory.find({});
-    const clicks = JSON.parse(entry)
+    let clicks = {}
+    try {
+       clicks =  JSON.parse(entry)
+    } catch (error) {
+        
+    }
     const data = await entryModel.create({
         email,
         classId,
@@ -165,6 +171,9 @@ app.post("/track", async (req,res)=>{
         clicks,
         university,
         details,
+        detailsRed,
+        detailsYellow,
+        detailsGreen,
         date: new Date()
     })
 
