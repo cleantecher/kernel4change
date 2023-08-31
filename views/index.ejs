@@ -51,7 +51,7 @@
                     <div class="feedback mt-2" id="red">
                         <%for(let entry of allEntries){%>
                             <% if (entry.category=="red" && entry.show=="yes" ) { %>
-                                <button class="feedbackCategory" onclick="clickBtn(`<%= entry._id %>`, 'red')"><span
+                                <button class="feedbackCategory" type="button" onclick="clickBtn(`<%= entry._id %>`, 'red')"><span
                                         class="clickRate" id="<%= entry._id %>">0</span>
                                     <%=entry.description %>
                                 </button>
@@ -70,7 +70,7 @@
                         <!-- the feedback code will go here -->
                         <%for(let entry of allEntries){%>
                             <% if (entry.category=="yellow" && entry.show=="yes" ) { %>
-                                <button class="feedbackCategory" onclick="clickBtn(`<%= entry._id %>`, 'yellow')"><span
+                                <button class="feedbackCategory" type="button" onclick="clickBtn(`<%= entry._id %>`, 'yellow')"><span
                                         class="clickRate" id="<%= entry._id %>">0</span>
                                     <%=entry.description %>
                                 </button>
@@ -88,7 +88,7 @@
                         <!-- the feedback code will go here -->
                         <%for(let entry of allEntries){%>
                             <% if (entry.category=="green" ) { %>
-                                <button class="feedbackCategory" onclick="clickBtn(`<%= entry._id %>`, 'green')"><span
+                                <button class="feedbackCategory" type="button" onclick="clickBtn(`<%= entry._id %>`, 'green')"><span
                                         class="clickRate" id="<%= entry._id %>">0</span>
                                     <%=entry.description %>
                                 </button>

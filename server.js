@@ -177,9 +177,7 @@ app.post("/track", async (req,res)=>{
         date: new Date()
     })
 
-    return res.json({
-        data
-    })
+    res.send("Thank you for being a kernel4change in our test pilot. Analytics and added functionality due for release in November 2023. For any feedback you want to share pls email aman@cleantecher.com")
 })
 
 
