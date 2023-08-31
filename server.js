@@ -101,10 +101,21 @@ app.put("/dbContents/:id", async(req,res)=>{
 // end test code for crud//
 // crud= tested success(entry edit retrival, (delete function not tested))
 
+app.get('/login', (req, res) => {
+    res.render('login')
+})
+
+
 
 
 app.get("/admin", async(req,res)=>{
-    res.render("admin")
+    const {email, password} = req.query
+    if(email == 'aman@cleantecher.com' && password == '011235813') {
+      return  res.render("admin")
+    } else {
+    
+      return  res.render("login")
+    }
 })
 
 app.post("/admin", (req,res)=>{
@@ -139,31 +150,26 @@ app.put("/adminAll/:id", async(req,res)=>{
 app.get("/", async(req,res)=>{
     const allEntries= await structureCategory.find({});
     console.log("all entries sent to main page");
-
-    
     res.render("index", {allEntries})
 })
 
 app.post("/track", async (req,res)=>{
-
-    const { entry, classId, recommendation} = req.body
-    
+    const { entry, classId, recommendation, details, email, university} = req.body
     const allEntries= await structureCategory.find({});
     const clicks = JSON.parse(entry)
-
     const data = await entryModel.create({
-        email: 'email',
+        email,
         classId,
         recommendation,
-        clicks
+        clicks,
+        university,
+        details
     })
 
     return res.json({
         data
     })
 })
-
-// click function
 
 
 // opening app connection and link to the server on port 3000 keep this line as the last one in the code

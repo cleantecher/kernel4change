@@ -40,6 +40,9 @@ body{
     width: 8vh;
     border-radius: 4vh;
     border-style: solid; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 #red{
     background-color: var(--red);
@@ -83,4 +86,11 @@ body{
     text-align: center;
 }
 
-
+.clickRate {
+    display: inline-block;
+    height: 5vh;
+    width: 5vh;
+    border-radius: 50%;
+    border-color: var(--purple);
+    border-style: solid;
+}

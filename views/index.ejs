@@ -19,10 +19,10 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-              <a class=" nav-link active" aria-current="page" href="#">Aman</a>
-              <a class=" nav-link" href="#">Hates</a>
-              <a class=" nav-link" href="#">Coding</a>
-              <a class=" nav-link disabled">Bros</a>
+              <a class=" nav-link active" aria-current="page" href="#">See</a>
+              <a class=" nav-link" href="#">Something</a>
+              <a class=" nav-link" href="#">Say</a>
+              <a class=" nav-link disabled">Something</a>
             </div>
           </div>
         </div>
@@ -45,9 +45,10 @@
                     <div class="feedback mt-2" id="red">
                             <%for(let entry of allEntries){%>
                                 <% if (entry.category == "red" && entry.show=="yes") { %>
-                                            <button class="feedbackCategory"  onclick="clickBtn(`<%= entry._id %>`, 'red')"><%=entry.description %><span id="<%= entry._id %>">0</span></button>
+                                            <button class="feedbackCategory"  onclick="clickBtn(`<%= entry._id %>`, 'red')"><span class="clickRate" id="<%= entry._id %>">0</span>     <%=entry.description %></button>
                                     <%}%>
-                             <%}%>   
+                            <%}%>
+
                     </div>
                 </div>
                 <div class="col-sm mt-4">
@@ -58,9 +59,10 @@
                         <!-- the feedback code will go here -->
                         <%for(let entry of allEntries){%>
                             <% if (entry.category == "yellow" && entry.show=="yes") { %>
-                                    <button class="feedbackCategory" id="<%=entry._id%>"><%=entry.description %> </button>
+                                <button class="feedbackCategory"  onclick="clickBtn(`<%= entry._id %>`, 'yellow')"><%=entry.description %><span class="clickRate" id="<%= entry._id %>">0</span>     <%=entry.description %></button>
                                 <%}%>
                          <%}%>  
+
                     </div>
                 </div>
                 <div class="col-sm mt-4">
@@ -71,7 +73,7 @@
                         <!-- the feedback code will go here -->
                         <%for(let entry of allEntries){%>
                             <% if (entry.category == "green") { %>
-                                    <button class="feedbackCategory" id="<%=entry._id%>"><%=entry.description %> </button>
+                                <button class="feedbackCategory"  onclick="clickBtn(`<%= entry._id %>`, 'green')"><span class="clickRate" id="<%= entry._id %>">0</span>     <%=entry.description %></button>
                                 <%}%>
                          <%}%>  
                     </div>
@@ -85,8 +87,17 @@
                         <div class="final row">
                             <form action="/track" method="POST">
                                 <input type="hidden" name="entry" id="entry" value="">
-                                <label for="class">Enter Class in XXABCXX format please</label><br>
-                                <input type="text" name="classId" placeholder="class"><br>
+                                <label for="class">Enter Class number in SUBJXXX format please</label><br>
+                                <input type="text" name="classId" placeholder="CHEM2301" required><br>
+                                <label for="email">Non University Email</label><br>
+                                <input type="text" name="email" placeholder="coolPerson1@gmail.com" required><br>
+                                <label for="university">University</label><br>
+                                <select name="university" >
+                                    <option value="Mt.Royal">Mt.Royal </option>
+                                    <option value="other">other</option>
+                                </select>
+                                <label for="details">Details you want to share</label><br>
+                                <textarea name="details" placeholder="Anything Additional?"></textarea>
                                 <label for="overall">Recommendation</label><br>
                                     <select name="recommendation" >
                                         <option value="great">Elective-Good experience </option>

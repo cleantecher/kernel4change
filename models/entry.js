@@ -3,7 +3,12 @@ const entry = new mongoose.Schema({
     email: String,
     recommendation: String,
     classId: String,
-    clicks: Object
+    clicks: Object,
+    university: String,
+    details: String,
+    detailsRed: String,
+    detailsYellow: String,
+    detailsGreen: String
 })
 
 module.exports = mongoose.model("entry", entry);
