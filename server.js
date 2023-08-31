@@ -20,6 +20,8 @@ const { timeStamp } = require("console");
 
 // initiating the command for express and storing it in variable called app
 const app=express();
+// setting the favicon
+const favicon=require("serve-favicon")
 // setting the path location to the views folder
 app.set("views", path.join(__dirname,"views"));
 
@@ -31,6 +33,9 @@ app.use(express.urlencoded({extended:true}))
 app.use(methodOveride("_method"));
 // create the ability to interpret css code and render it on the ejs engine
 app.use(express.static(path.join(__dirname, 'public')));
+// setting the favicon
+app.use(favicon(path.join(__dirname,"public","favicon.ico")))
+
 // connection open to the database
 main().catch(err => console.log(err));
 async function main() {

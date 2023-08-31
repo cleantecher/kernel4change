@@ -97,3 +97,12 @@ body{
     border-style: solid;
 }
 
+
+.tagline{
+    text-align: center;
+    font-size: smaller;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}
