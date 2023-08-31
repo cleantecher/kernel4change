@@ -8,7 +8,8 @@ const entry = new mongoose.Schema({
     details: String,
     detailsRed: String,
     detailsYellow: String,
-    detailsGreen: String
+    detailsGreen: String,
+    date: Date
 })
 
 module.exports = mongoose.model("entry", entry);

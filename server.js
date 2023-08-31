@@ -15,7 +15,8 @@ const structureCategory = require("./models/category");
 // schema for app
 
 // need method override to edit and delete documents
-const methodOveride=require("method-override")
+const methodOveride=require("method-override");
+const { timeStamp } = require("console");
 
 // initiating the command for express and storing it in variable called app
 const app=express();
@@ -163,7 +164,8 @@ app.post("/track", async (req,res)=>{
         recommendation,
         clicks,
         university,
-        details
+        details,
+        date: new Date()
     })
 
     return res.json({
