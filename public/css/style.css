@@ -63,6 +63,8 @@ body{
     position: relative;
     align-items: center;
     align-content: center;
+    text-align: center;
+    padding-bottom: 2%;
 }
 
 .feedbackCategory{
@@ -94,3 +96,4 @@ body{
     border-color: var(--purple);
     border-style: solid;
 }
+
