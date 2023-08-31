@@ -34,7 +34,9 @@ app.use(express.static(path.join(__dirname, 'public')));
 // connection open to the database
 main().catch(err => console.log(err));
 async function main() {
-    await mongoose.connect('mongodb://127.0.0.1:27017/kernel4change')//wanted the actual address localhost didnt work
+    const username = 'cleantecher'
+    const pass = 'Fe7xVxbBtywUeWTO'
+    await mongoose.connect(`mongodb+srv://cleantecher:${pass}@kernel4change.xbw9hth.mongodb.net/kernel4change`)//wanted the actual address localhost didnt work
     .then(()=> {
       console.log("Mongo->Connection from node.js open, kernel4change db should be created")
     })
